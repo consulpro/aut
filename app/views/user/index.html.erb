@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vendedor</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vend.each do |vend| %>
+      <tr>
+        <td><%= vend.id %></td>
+        <td><%= vend.email %></td>
+      <td><%= link_to 'Editar', edit_vendedor_registration_path(vend), method: :get, class:"btn btn-success btn-xs" %></td>
+
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_vendedor_registration_path %>
